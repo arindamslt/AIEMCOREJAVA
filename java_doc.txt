@@ -1,0 +1,172 @@
+DATE:16.04.2024
+========================================================================
+FEATURES OF JAVA
+======================================================
+1.PLATFORM INDEPENDENT
+2.OBJECT ORIENTED PROGRAMMING(OOPS)
+3.MULTITHREADING
+===========================
+javac X.java
+
+X.java====JAVA COMPILER====x.class
+java X
+
+x.class====JVM(JAVA VIRTUAL MACHINE)====O/P
+
+JVM
+==========================
+JAVA VIRTUAL MACHINE
+IT IS AN ABSTRACT MACHINE WHOSE PURPOSE TO EXECUTE COMPILED JAVA CLASS.
+
+JDK JRE  JVM JIT
+=================================================
+JDK==JAVA DEVELOPMENT TOOLKIT
+JRE==JAVA RUNTIME ENVIRONMENT
+JVM==JAVA VIRTUAL MACHINE
+JIT===JUST IN TIME COMPILER
+=============================================================
+JAVA VERSION===JAVA 17
+EDITOR===NOTEPAD
+IDE===INTEGRATED DEVELOPMENT ENVIRONMENT
+EX:ECLIPSE,NETBEANS,STS,INTELLIJ
+=================================================================
+IDENTIFIER
+==============================
+NAME IN JAVA PROGRAM IS CALLED IDENTIFIER.IT CAN BE A CLASS NAME,IT CAN BE A METHOD NAME ,IT  CAN BE A VARIABLE NAME.
+
+DATA TYPES
+==================================
+VARIABLE
+==============================
+NAMED STORED LOCATION
+THREE KIND OF VARIBLE
+===============================
+1.INSTANCE VARIABLE
+2.LOCAL VARIABLE
+3.STATIC VARIBLE
+
+
+OPERATOR
+============================
+1.ARITHMETIC
+2.INCREMENT AND DECREMENT
+================================
+++  ,--
+3.LOGICAL
+-----------------------
+& && ! !!
+4.TERNARY
+5.TYPE CASTING OPERATOR
+6.ASSIGNMENT
+7.INSTANCE OF
+8.BIT WISE
+9.RELATIONAL
+
+CONTROL STRUCTURE
+=================================
+IF ELSE ELSE IF 
+LOOP==FOR,WHILE,DO WHILE
+BREAK CONTINUE
+
+for(intialization;condition;increment/decrement)
+
+OBJECT ORIENTED PROGRAMMING
+=========================================================
+FEATURES
+======================================================
+1.ENCAPSULATION
+2.POLYMORPHISM
+  STATIC
+  DYNAMIC
+3.INHERITANCE
+   SINGLE
+   MULTILEVEL
+  HIERARCHICAL
+4.ABSTRACTION
+5.DYNAMIC BINDING
+
+WHAT IS CLASS?
+=========================================
+CLASS IS COLLECTION OF OBJECTS WITH COMMON PROPERTIES AND BEHAVIOUR
+IT IS DEAD TEMPLATE
+WHAT IS OBJECT?
+OBJECT IS REAL WORLD ENTITY
+
+
+CHAIR TABLE BOOKSHELF    FURNITURE
+=====================    ========
+OBJECTS                  CLASS
+LENGTH
+WIDTH
+HEIGHT
+KEEPING SOMETHING
+
+ENCAPSULATION
+==================================================
+
+CROCIN650
+BINDING OF DATA AND METHOD TOGETHER
+UML
+================================
+UNIFIED MODELLING LANGUAGE
+PURPOSE
+========================
+DRAW THE CLASS DIAGRAM
+SYMBOLS
+
+THE SUPER CLASS IN JAVA IS Object Class  WHICH IS BELONGS TO java.lang.* Package
+WHATEVER THE CLASS YOU HAVE CREATED ALL ARE THE CHILD OF OBJECT CLASS
+
+POLYMORPHISM
+=============================================================
+POLY===MANY
+MORPHISM=FORMS
+THERE ARE TWO TYPES OF POLYMORPHISM
+====================================
+1.STATIC POLYMORPHISM
+2.DYNAMIC POLYMORPHISM
+STATIC POLYMORPHISM
+================================
+THIS IS ALSO CALLED METHOD OVERLOADDING
+METHOD OVERLOADDING
+===============================
+SAME METHOD NAME WITH DIFFERENT ARGUMENT PASSING BODY MOREB OR LESS SAME.
+TASK1()
+TASK2()
+TASK3()
+TASK(X.Y)
+TASK(X,Y,Z)
+TASK(X)
+
+CONSTRUCTOR
+=========================================
+CONSTRUCTOR IS THE SAME NAME OF CLASS NAME.IT IS NOT EVEN VOID OR RETURN TYPE BECAUSE IT RETURN CLASS ITSELF.
+UTILITY
+==============================================
+1.CREATING OBJECT OF A CLASS
+2.AT THE TIME OF CREATING THE OBJECT INITIALIZE THE OBJECT
+
+==================================================================================
+CONSTRUCTOR OVERLOADDING
+===============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
