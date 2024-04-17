@@ -130,7 +130,7 @@ STATIC POLYMORPHISM
 THIS IS ALSO CALLED METHOD OVERLOADDING
 METHOD OVERLOADDING
 ===============================
-SAME METHOD NAME WITH DIFFERENT ARGUMENT PASSING BODY MOREB OR LESS SAME.
+SAME METHOD NAME WITH DIFFERENT ARGUMENT PASSING BODY MORE OR LESS SAME.
 TASK1()
 TASK2()
 TASK3()
@@ -140,7 +140,7 @@ TASK(X)
 
 CONSTRUCTOR
 =========================================
-CONSTRUCTOR IS THE SAME NAME OF CLASS NAME.IT IS NOT EVEN VOID OR RETURN TYPE BECAUSE IT RETURN CLASS ITSELF.
+CONSTRUCTOR IS THE SAME NAME OF CLASS NAME.IT IS NOT EVEN VOID NOR RETURN TYPE BECAUSE IT RETURN CLASS ITSELF.
 UTILITY
 ==============================================
 1.CREATING OBJECT OF A CLASS
@@ -149,6 +149,99 @@ UTILITY
 ==================================================================================
 CONSTRUCTOR OVERLOADDING
 ===============================================================================
+ DATE:17.04.2024
+==================================================================
+  INHERITANCE
+==========================================================================
+ AQUIRING THE PROPERTY OF CLASS INTO ANOTHER CLASS.
+
+TYPES OF INHERITANCE
+=============================
+ 1.SINGLE
+ 2.MULTILEVEL
+ 3.HIERARCHICAL
+
+DYNAMIC POLYMORPHISM
+================================
+IT IS CALLED METHOD OVERRIDDING
+SAME METHOD NAME BOTH IN CHILD AND PARENT BUT BODY IS DIFFERENT CALLED METHOD OVERRIDDING
+ALWAYS OVERRIDDEN METHOD IS CALLED.
+UTILITY OF SUPER
+============================================
+1.CALLING THE SUPER CLASS CONSTRUCTOR
+2.CALLING THE SUPER CLASS METHOD WHICH IS HIDDEN IN SUBCLASS
+
+
+ABSTRACTION
+============================================
+1.ABSTRACT CLASS
+============================================
+A CLASS IS CONSIDERED TO BE ABSTRACT IF THERE IS ATLEAST ONE METHOD IS ABSTRACT
+Ex:
+abstract class Test
+{
+   public abstract void show();
+public void m1();
+}
+
+2.ABSTRACT METHOD
+=======================
+A METHOD IS CALLED ABSTRACT IF THERE IS A NO BODY
+EX:public abstract void show();
+RESTRICTION
+==========================================
+WE CAN'T CREATE THE OBJECT OF ABSTRACT CLASS
+
+
+MODIFIER
+=========================================
+MODIFIER TELLS HOW A MEMBER OF A CLASS IS BEING ACCESSED INTO ANOTHER CLASS
+LIST OF MODIFIER
+==========================================
+1.private====================
+2.public
+3.protected     ACCESS SPECIFIER
+4.default================
+5.static
+6.final
+7.abstract
+8.native
+9.synchronized
+
+PRIVATE MEMBER ARE ACCESSABLE SAME CLASS ONLY
+DEFAULT MEMBER ARE ACCESSABLE SAME CLASS AND IT'S CHILD CLASS BUT MUST IN SAME PACKAGE
+PUBLIC AND PROTECTED MEMBERS ARE ACCESSABLE SAME CLASS AND IT'S CHILD EVEN IF THEY ARE IN DIFFERENT PACKAGE
+
+STATIC
+===========================
+IT IS USED BY ITSELF.IF WE DECLARE A VARIBLE OR METHOD IS STATIC NO NEED TO CREATE OBJECT OF A CLASS TO ACCESS
+IT.WE CAN ACCESS BY CLASS NAME.
+RESTRICTION
+===========================
+STATIC MEMBERS ARE ACCESSABLE STATIC METHOD ONLY
+STATIC BLOCK
+================================================
+IT EXECUTES ONLY ONCE AND IT EXECUTES FIRST.
+RESTRICTION
+========================================
+IT WILL ACCESS ONLY STATIC MEMBER
+
+FINAL
+=======================================
+IF WE DECLARE A VARIABLE IS FINAL IT IS CONSTANT
+IF WE DECLARE A METHOD IS FINAL IT CAN'T BE OVERRIDDEN
+IF WE DECLARE THE CLASS IS FINAL IT CAN'T BE EXTENDED
+===================================================================
+NESTED CLASS
+===========================================================
+CLASS WITHIN CALSS IS CALLED NESTED CLASS
+CLASS x
+{
+  CLASS Y
+  {
+
+  }
+}
 
 
 
