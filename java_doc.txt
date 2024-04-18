@@ -243,6 +243,77 @@ CLASS x
   }
 }
 
+DATE:18.04.2024
+========================================================================================================
+  INTERFACE
+=====================================================================================================
+INTERFACE IS A CONTRACT BETWEEN THE CLEINT CODE AND THE IMPLEMENTED CLASS
+IN INTERFACE BY DEFAULT ALL METHODS ARE ABSTRACT
+JAVA8 INTRODUCE DEFAULT METHOD IN INTERFACE
+
+ABSTARCT CLASS                VS                INTERFACE
+==================================================================================
+1.ATLEAST ONE METHOD IS ABSTRACT         1.BY DEFAULT ALL METHODS ARE ABSTRACT
+2.IT IS EXTENED                          2.IT IS IMPLEMEMNTED
+3.IT CAN'T OVERCOME MULTIPLE             3.IT CAN ABLE TO OVERCOME MULTIPLE INHERITANCE
+
+INHERITANCE 
+============================================================================================
+YOU CAN'T CREATE OBJECT OF INTERFACE AND ABSTRACT CLASS
+
+EXCEPTION HANDELLING
+==============================   
+ERROR===ERROR IS NOT RECOVERABLE
+EXCEPTION==IT IS RECOVERABLE
+EXCEPTION IS EVENT WHICH OCCUR DURING TRHE EXECUTION OF A PROGRAM IT WILL PREVENT THE EXECUTION OF PROGRAM.
+IF YOU HANDLE THE EXCEPTION THEN REST OF THE PART WILL BE EXECUTED
+HANDLE THE EXCEPTION BY MEANS OF
+========================================
+TRY
+CATCH
+FINALLY
+THROW
+THROWS
+TYPES OF EXCEPTION
+===============================================
+1.CHECKED EXCEPTION=====OTHER THAN RUNTIME EXCEPTION AND IT'S SUB CLASS CALLED CHECKED
+2.UNCHECKED EXCEPTION===RUNTIME EXCEPTION AND IT'S SUBCLASS CALLED UNCHECKED EXCEPTIO 
+IN CASE OF CHECKED EXCEPTION IT IS MANDATORY TO WRITE TRY AND CATCH BLOCK
+==================================================================
+EXCEPTION MESSAGE HANDELLING
+====================================================================
+EXCEPTIONOBJECT.printStackTrace();====PACKAGE NAME ALONG WITH CLASS NAME+MESSAGE+LINE NUMBER WHERE EXCEPTION OCCUR
+System.out.println(exceptionobject);====PACKAGE NAME ALONG WITH CLASS NAME+MESSAGE
+
+finally
+==========================================================
+WHETHER THE EXCEPTION OCCUR OR NOT FINALLY BLOCK WILL BE EXECUTED
+PURPOSE
+=============================
+CLEANING UP TASK
+
+IF WE DO NOT WANT TO USE TRY AND CATCH THEN WE GO FOR THROWS  CLAUSE
+THROWS CLAUSE TO BE WRITTEN ALONG WITH THE METHOD NAME
+FOR EX:
+public void res() throws ArithmeticException,Exception
+THROWS SHOULD BE REQUIRED BOTH CALLER AND CALLE ENVIRONMENT
+
+
+USER DEFINED EXCEPTION
+=============================================================
+
+THROW CLAUSE IS USED TO THROW THE USERDEFINED EXCEPTION OBJECT.WHEN USERDEFINED
+EXCEPTION OCCUR JVM CAN'T THROW THE EXCEPTION AUTOMATICALLY.AS A PROGRAMMER YOU
+HAVE TO THROW THE EXCEPTION EXCIPLITLY BY THROW CLAUSE.
+
+USER INPUT CAN GIVEN BY TWO WAYS
+===================================
+1.BufferReader Class====import java.io.*;
+2.Scanner Class=========import java.util.*
+
+
+
+
 
 
 
