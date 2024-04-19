@@ -1,0 +1,328 @@
+SQL IN MYSQL
+=================================================================
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| abs                |
+| aec                |
+| aiem               |
+| bootdb             |
+| bootreact          |
+| dbs                |
+| foodapp            |
+| hbdb               |
+| hbdbs              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| restdb             |
+| sys                |
+| test               |
++--------------------+
+15 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> CREATE DATABASE AIEM1;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| abs                |
+| aec                |
+| aiem               |
+| aiem1              |
+| bootdb             |
+| bootreact          |
+| dbs                |
+| foodapp            |
+| hbdb               |
+| hbdbs              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| restdb             |
+| sys                |
+| test               |
++--------------------+
+16 rows in set (0.00 sec)
+
+mysql> USE AIEM1;
+Database changed
+mysql> SHOW TABLES;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE STUDENT
+    -> (ROLLNO INT(3),
+    ->  SNAME  VARCHAR(25),
+    ->  DEPTNM VARCHAR(25));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> SHOW TABLES;
++-----------------+
+| Tables_in_aiem1 |
++-----------------+
+| student         |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(1,'AJOY','IT');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM STUDENT;
++--------+-------+--------+
+| ROLLNO | SNAME | DEPTNM |
++--------+-------+--------+
+|      1 | AJOY  | IT     |
++--------+-------+--------+
+1 row in set (0.00 sec)
+
+mysql> DESC STUDENT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| ROLLNO | int         | YES  |     | NULL    |       |
+| SNAME  | varchar(25) | YES  |     | NULL    |       |
+| DEPTNM | varchar(25) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO STUDENT VALUES(1,'AJOY','IT');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM STUDENT;
++--------+-------+--------+
+| ROLLNO | SNAME | DEPTNM |
++--------+-------+--------+
+|      1 | AJOY  | IT     |
+|      1 | AJOY  | IT     |
++--------+-------+--------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE DEPT
+    -> (DEPTID   VARCHAR(10) PRIMARY KEY,
+    ->  DNAME    VARCHAR(25) NOT NULL,
+    ->  LOC      VARCHAR(25) NOT NULL);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DESC DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTID | varchar(10) | NO   | PRI | NULL    |       |
+| DNAME  | varchar(25) | NO   |     | NULL    |       |
+| LOC    | varchar(25) | NO   |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES('D1','MKTG','KOLKATA');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+-------+---------+
+| DEPTID | DNAME | LOC     |
++--------+-------+---------+
+| D1     | MKTG  | KOLKATA |
++--------+-------+---------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES('D1','MKTG','KOLKATA');
+ERROR 1062 (23000): Duplicate entry 'D1' for key 'dept.PRIMARY'
+mysql> INSERT INTO DEPT VALUES('D2',NULL,'KOLKATA');
+ERROR 1048 (23000): Column 'DNAME' cannot be null
+mysql> INSERT INTO DEPT VALUES('D2','FINANCE',NULL);
+ERROR 1048 (23000): Column 'LOC' cannot be null
+mysql> INSERT INTO DEPT VALUES('D3','IT','MUMBAI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+-------+---------+
+| DEPTID | DNAME | LOC     |
++--------+-------+---------+
+| D1     | MKTG  | KOLKATA |
+| D3     | IT    | MUMBAI  |
++--------+-------+---------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO DEPT VALUES('D2','FINANCE','DELHI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+---------+---------+
+| DEPTID | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | DELHI   |
+| D3     | IT      | MUMBAI  |
++--------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE TABLE EMP
+    -> (EID   VARCHAR(10) PRIMARY KEY,
+    ->  ENAME  VARCHAR(25) NOT NULL,
+    ->  DESIG  VARCHAR(25),
+    ->  SAL    DECIMAL(11,2),
+    ->  DEPTID  VARCHAR(10),
+    -> CONSTRAINT EMP_DEPTID_FK FOREIGN KEY(DEPTID) REFERENCES DEPT(DEPTID)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> DESC EMP;
++--------+---------------+------+-----+---------+-------+
+| Field  | Type          | Null | Key | Default | Extra |
++--------+---------------+------+-----+---------+-------+
+| EID    | varchar(10)   | NO   | PRI | NULL    |       |
+| ENAME  | varchar(25)   | NO   |     | NULL    |       |
+| DESIG  | varchar(25)   | YES  |     | NULL    |       |
+| SAL    | decimal(11,2) | YES  |     | NULL    |       |
+| DEPTID | varchar(10)   | YES  | MUL | NULL    |       |
++--------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DCEPT;
+ERROR 1146 (42S02): Table 'aiem1.dcept' doesn't exist
+mysql> SELECT * FROM DEPT;
++--------+---------+---------+
+| DEPTID | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | DELHI   |
+| D3     | IT      | MUMBAI  |
++--------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> DESC EMP;
++--------+---------------+------+-----+---------+-------+
+| Field  | Type          | Null | Key | Default | Extra |
++--------+---------------+------+-----+---------+-------+
+| EID    | varchar(10)   | NO   | PRI | NULL    |       |
+| ENAME  | varchar(25)   | NO   |     | NULL    |       |
+| DESIG  | varchar(25)   | YES  |     | NULL    |       |
+| SAL    | decimal(11,2) | YES  |     | NULL    |       |
+| DEPTID | varchar(10)   | YES  | MUL | NULL    |       |
++--------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO EMP VALUES('E1','RAMAN','MANAGER',50000.00,'D4');
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`aiem1`.`emp`, CONSTRAINT `EMP_DEPTID_FK` FOREIGN KEY (`DEPTID`) REFERENCES `dept` (`DEPTID`))
+mysql> INSERT INTO EMP VALUES('E1','RAMAN','MANAGER',50000.00,'D1');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM EMP;
++-----+-------+---------+----------+--------+
+| EID | ENAME | DESIG   | SAL      | DEPTID |
++-----+-------+---------+----------+--------+
+| E1  | RAMAN | MANAGER | 50000.00 | D1     |
++-----+-------+---------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT;
++--------+---------+---------+
+| DEPTID | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | DELHI   |
+| D3     | IT      | MUMBAI  |
++--------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMP;
++-----+-------+---------+----------+--------+
+| EID | ENAME | DESIG   | SAL      | DEPTID |
++-----+-------+---------+----------+--------+
+| E1  | RAMAN | MANAGER | 50000.00 | D1     |
++-----+-------+---------+----------+--------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE DEPT1 AS SELECT * FROM DEPT;
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM DEPT1;
++--------+---------+---------+
+| DEPTID | DNAME   | LOC     |
++--------+---------+---------+
+| D1     | MKTG    | KOLKATA |
+| D2     | FINANCE | DELHI   |
+| D3     | IT      | MUMBAI  |
++--------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> DELETE FROM DEPT1 WHERE DEPTID='D1';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT1;
++--------+---------+--------+
+| DEPTID | DNAME   | LOC    |
++--------+---------+--------+
+| D2     | FINANCE | DELHI  |
+| D3     | IT      | MUMBAI |
++--------+---------+--------+
+2 rows in set (0.00 sec)
+
+mysql> UPDATE DEPT1 SET DNAME='HR',LOC='BANGALORE' WHERE DEPTID='D2';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM DEPT1;
++--------+-------+-----------+
+| DEPTID | DNAME | LOC       |
++--------+-------+-----------+
+| D2     | HR    | BANGALORE |
+| D3     | IT    | MUMBAI    |
++--------+-------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT DNAME,LOC FROM DEPT1;
++-------+-----------+
+| DNAME | LOC       |
++-------+-----------+
+| HR    | BANGALORE |
+| IT    | MUMBAI    |
++-------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT1;
++--------+-------+-----------+
+| DEPTID | DNAME | LOC       |
++--------+-------+-----------+
+| D2     | HR    | BANGALORE |
+| D3     | IT    | MUMBAI    |
++--------+-------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT1 WHERE LOC='BANGALORE';
++--------+-------+-----------+
+| DEPTID | DNAME | LOC       |
++--------+-------+-----------+
+| D2     | HR    | BANGALORE |
++--------+-------+-----------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO DEPT1 VALUES('D1','MKTG','DELHI');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM DEPT1;
++--------+-------+-----------+
+| DEPTID | DNAME | LOC       |
++--------+-------+-----------+
+| D2     | HR    | BANGALORE |
+| D3     | IT    | MUMBAI    |
+| D1     | MKTG  | DELHI     |
++--------+-------+-----------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM DEPT1 WHERE LOC IN('DELHI','MUMBAI');
++--------+-------+--------+
+| DEPTID | DNAME | LOC    |
++--------+-------+--------+
+| D3     | IT    | MUMBAI |
+| D1     | MKTG  | DELHI  |
++--------+-------+--------+
+2 rows in set (0.00 sec)

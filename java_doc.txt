@@ -312,6 +312,114 @@ USER INPUT CAN GIVEN BY TWO WAYS
 2.Scanner Class=========import java.util.*
 
 
+DATE:19.04.2024
+=========================================================================================================
+STRING HANDELLING
+=====================================================================================================
+STRING IS AN IMMUTABLE OBJECT.
+String S="ARUP";//STRING LITERAL
+String s1=new String("ARUP");//OBJECT
+
+STRING HANDELLING METHODS
+==================================
+isEmpty()
+length()
+concat()
+charAt()
+substring()
+indexOf()
+toLowerCase()
+toUpperCase()
+trim()
+split()
+
+Why String Contant Pool is required?
+==============================================================
+String city="KOLKATA";
+==
+equals()
+
+JDBC
+===========================================================================================================
+JAVA DATABASE CONNECTIVITY
+=======================================================================================================
+DBMS
+============================================================
+DATABASE MANAGEMENT SYSTEM
+RDBMS
+==================================================================
+RELATIONAL DATABASE MANAGEMENT SYSTEM
+=======================================================================
+
+DATABASE
+============================================================================
+DATA=======DATA IS RAW FACTS
+FIELDS
+RECORDS/TUPLE
+TABLE
+DATABASE==IT IS A COLLECTION OF INTERELATED TABLES OR DATA
+DBMS===DATABSE+SQL(STRUCTRED QUERY LANGUAGE)
+ADVANTAGE DBMS
+=============================
+1.MINIMIZE DATA REDUNDENCY
+2.SECURITY RESTRICTION IS THERE
+3.DATA CAN BE SHARED
+4.INTRIGRITY CONSTRAINT CAN BE MAINTAINED
+GENERATION OF LANGUAGE
+====================
+1ST GEN===0,1
+2ND GEN==ASSEMBLY LANGUAGE===ASSENBLER====0,1
+3RD GEN==HLL=JAVA====COMPILER/INTERPRETR===,
+4TH GEN===NON PROCEDURAL LANGUAGE====EX:SQL
+SELECT * FROM STUDENT;
+HOW PART IS NOT  KNOWN TO US
+WHAT PART KNOWN TO US
+PL/SQL
+
+RDBMS SOFTWARE
+========================
+ORACLE,MYSQL,SQLSERVER
+NOSQL DATABAE
+======================
+MONGODB,CASSANDRA
+
+
+SQL
+=================================
+TYPES OF COMMAND
+=============================
+DDL===DATA DEFINATION LANGUAGE
+CREATE,ALTER,RENAME,TRUNCATE,DROP
+DML==DATA MANIPULATION LANGUAGE
+INSERT,UPDATE,DELETE,MERGE
+DATA RETRIEVAL=
+=================================
+SELECT
+DCL===DATA CONTRL LANGUAGE
+============================
+GRANT,REVOKE
+TCL==TRANSACTION CONTROL LANGUAGE
+=========================================
+COMMIT,ROLLBACK
+
+DATA TYPES
+========================
+VARCHAR===ALPHANUMERIC
+EX:SNAME VARCHAR(10)
+INT(5)==99999
+DECIMAL(7,2)==99999.99
+DATE====YY/MM/DD
+
+CONSTRAINTS
+=========================================================
+BEFORE INSERTING DATA YOU HAVE TO SATISFY CERTAIN RULES AND REGULATIONS CALLED CONSTRAINTS
+1.PRIMARY KEY===IT DOES NOT ACCEPT NULL VALUE AS WELL AS DUPLICATE VALUE
+EX:ADHARCARD
+2.NOT NULL======YOU CAN'T LEFT BLANK TO THE FIELD
+3.UNIQUE KEY===IT ACCEPT NULL VALUE BUT DOES NOT ACCEPT DUPLICATE VALUE
+4.CHECK CONSTRAINT====YOU HAVE TO  SATISFY THE PREDEEFINED VALUES
+EX:GENDER===M/F
+5.FOREIGN KEY=====IT ACCEPTS OTHER TABLE PRIMARY KEY VALUE
 
 
 
