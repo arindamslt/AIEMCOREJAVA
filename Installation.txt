@@ -19,4 +19,11 @@ https://www.youtube.com/watch?v=0AF0w_OJyDs
 GITHUB LINK
 ======================================================
 https://github.com/arindamslt/AIEMCOREJAVA.git
+=========================================================
+JDBC
+================================================
+DRIVERNAME=com.mysql.cj.jdbc.Driver
+URL=jdbc:mysql://localhost:3306/test
+USERNAME=root
+PASSWORD=arindam
 
