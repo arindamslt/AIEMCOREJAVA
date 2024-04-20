@@ -421,14 +421,285 @@ EX:ADHARCARD
 EX:GENDER===M/F
 5.FOREIGN KEY=====IT ACCEPTS OTHER TABLE PRIMARY KEY VALUE
 
+DATE:20.04.2024
+==================================================================================================
+TABLE:PRODUCT
+FIELD NAME                DATA TYPE                SIZE       CONSTRAINTS
+================================================================================
+PID                        VARCHAR                 10          PRIMARY KEY
+PNAME                      VARCHAR                 25          NOT NULL
+PQTY                       INT                     5
+PRICE                     DECIMAL                 11,2
+================================================================================
+CREATE TABLE PRODUCT
+(PID   VARCHAR(10) PRIMARY KEY,
+ PNAME  VARCHAR(25) NOT NULL,
+ PQTY   INT(5),
+ PRICE  DECIMAL(11,2));
+================================================================================
+
+mysql> SHOW TABLES;
++-----------------+
+| Tables_in_aiem1 |
++-----------------+
+| dept            |
+| dept1           |
+| emp             |
+| product         |
+| student         |
++-----------------+
+5 rows in set (0.00 sec)
+
+mysql> DESC PRODUCT;
++-------+---------------+------+-----+---------+-------+
+| Field | Type          | Null | Key | Default | Extra |
++-------+---------------+------+-----+---------+-------+
+| PID   | varchar(10)   | NO   | PRI | NULL    |       |
+| PNAME | varchar(25)   | NO   |     | NULL    |       |
+| PQTY  | int           | YES  |     | NULL    |       |
+| PRICE | decimal(11,2) | YES  |     | NULL    |       |
++-------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+INSERT INTO PRODUCT VALUES('P1','TV',5,25000.00);
+INSERT INTO PRODUCT VALUES('P2','TAB',6,22000.00);
+INSERT INTO PRODUCT VALUES('P3','MOBILE',12,12000.00);
+INSERT INTO PRODUCT VALUES('P4','REFRIGERATOR',2,27000.00);
+INSERT INTO PRODUCT VALUES('P5','LAPTOP',15,45000.00);
+INSERT INTO PRODUCT VALUES('P6','TV',2,32000.00);
+
+FETCH ALL DATA
+=======================
+SELECT * FROM PRODUCT;
+WHERE CLAUSE
+====================================
+SELECT * FROM PRODUCT WHERE PNAME='TV';
+IN OPERATOR
+=====================
+
+mysql> SELECT * FROM PRODUCT WHERE PNAME IN('TV','MOBILE');
++-----+--------+------+----------+
+| PID | PNAME  | PQTY | PRICE    |
++-----+--------+------+----------+
+| P1  | TV     |    5 | 25000.00 |
+| P3  | MOBILE |   12 | 12000.00 |
+| P6  | TV     |    2 | 32000.00 |
++-----+--------+------+----------+
+3 rows in set (0.00 sec)
 
 
+mysql> SELECT * FROM PRODUCT WHERE PNAME NOT IN('TV','MOBILE');
++-----+--------------+------+----------+
+| PID | PNAME        | PQTY | PRICE    |
++-----+--------------+------+----------+
+| P2  | TAB          |    6 | 22000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 |
++-----+--------------+------+----------+
+3 rows in set (0.00 sec)
+AND OPERATOR
+===========================================================
+mysql> SELECT * FROM PRODUCT WHERE PNAME='TV' AND PRICE>25000.00;
++-----+-------+------+----------+
+| PID | PNAME | PQTY | PRICE    |
++-----+-------+------+----------+
+| P6  | TV    |    2 | 32000.00 |
++-----+-------+------+----------+
+1 row in set (0.00 sec)
+================================================================
+OR OPERATOR
+========================================================
+mysql> SELECT * FROM PRODUCT WHERE PNAME='TV' OR PRICE>25000.00;
++-----+--------------+------+----------+
+| PID | PNAME        | PQTY | PRICE    |
++-----+--------------+------+----------+
+| P1  | TV           |    5 | 25000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 |
+| P6  | TV           |    2 | 32000.00 |
++-----+--------------+------+----------+
+4 rows in set (0.00 sec)
+================================================================
+LIKE OPERATOR
+==============================================================
+mysql> SELECT * FROM PRODUCT WHERE PNAME LIKE 'T%';
++-----+-------+------+----------+
+| PID | PNAME | PQTY | PRICE    |
++-----+-------+------+----------+
+| P1  | TV    |    5 | 25000.00 |
+| P2  | TAB   |    6 | 22000.00 |
+| P6  | TV    |    2 | 32000.00 |
++-----+-------+------+----------+
+3 rows in set (0.00 sec)
 
 
+mysql> SELECT * FROM PRODUCT WHERE PNAME LIKE '_A%';
++-----+--------+------+----------+
+| PID | PNAME  | PQTY | PRICE    |
++-----+--------+------+----------+
+| P2  | TAB    |    6 | 22000.00 |
+| P5  | LAPTOP |   15 | 45000.00 |
++-----+--------+------+----------+
+2 rows in set (0.00 sec)
+mysql> SELECT * FROM PRODUCT WHERE PNAME LIKE '%P';
++-----+--------+------+----------+
+| PID | PNAME  | PQTY | PRICE    |
++-----+--------+------+----------+
+| P5  | LAPTOP |   15 | 45000.00 |
++-----+--------+------+----------+
+1 row in set (0.00 sec)
 
+mysql> SELECT * FROM PRODUCT WHERE PNAME LIKE '%A%';
++-----+--------------+------+----------+
+| PID | PNAME        | PQTY | PRICE    |
++-----+--------------+------+----------+
+| P2  | TAB          |    6 | 22000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 |
++-----+--------------+------+----------+
+3 rows in set (0.00 sec)
+ARITHMETIC OPERATOR
+==============================================
+mysql> SELECT PID,PNAME,PQTY,PRICE,PRICE*PQTY FROM PRODUCT;
++-----+--------------+------+----------+------------+
+| PID | PNAME        | PQTY | PRICE    | PRICE*PQTY |
++-----+--------------+------+----------+------------+
+| P1  | TV           |    5 | 25000.00 |  125000.00 |
+| P2  | TAB          |    6 | 22000.00 |  132000.00 |
+| P3  | MOBILE       |   12 | 12000.00 |  144000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |   54000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 |  675000.00 |
+| P6  | TV           |    2 | 32000.00 |   64000.00 |
++-----+--------------+------+----------+------------+
+6 rows in set (0.00 sec)
+COLUMN ALIAS
+=================================================================
+mysql> SELECT PID,PNAME,PQTY,PRICE,PRICE*PQTY  TOTALSAL FROM PRODUCT;
++-----+--------------+------+----------+-----------+
+| PID | PNAME        | PQTY | PRICE    | TOTALSAL  |
++-----+--------------+------+----------+-----------+
+| P1  | TV           |    5 | 25000.00 | 125000.00 |
+| P2  | TAB          |    6 | 22000.00 | 132000.00 |
+| P3  | MOBILE       |   12 | 12000.00 | 144000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |  54000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 | 675000.00 |
+| P6  | TV           |    2 | 32000.00 |  64000.00 |
++-----+--------------+------+----------+-----------+
+6 rows in set (0.00 sec)
+=====================================================================
+mysql> DELETE FROM PRODUCT WHERE PID='P6';
+Query OK, 1 row affected (0.00 sec)
 
+mysql> SELECT * FROM PRODUCT;
++-----+--------------+------+----------+
+| PID | PNAME        | PQTY | PRICE    |
++-----+--------------+------+----------+
+| P1  | TV           |    5 | 25000.00 |
+| P2  | TAB          |    6 | 22000.00 |
+| P3  | MOBILE       |   12 | 12000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |
+| P5  | LAPTOP       |   15 | 45000.00 |
++-----+--------------+------+----------+
+5 rows in set (0.00 sec)
+====================================================================
+UPDATE PRODUCT SET PRICE=55000.00,PQTY=25 WHERE PID='P5';
+mysql> UPDATE PRODUCT SET PRICE=55000.00,PQTY=25 WHERE PID='P5';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
+mysql> SELECT * FROM PRODUCT;
++-----+--------------+------+----------+
+| PID | PNAME        | PQTY | PRICE    |
++-----+--------------+------+----------+
+| P1  | TV           |    5 | 25000.00 |
+| P2  | TAB          |    6 | 22000.00 |
+| P3  | MOBILE       |   12 | 12000.00 |
+| P4  | REFRIGERATOR |    2 | 27000.00 |
+| P5  | LAPTOP       |   25 | 55000.00 |
++-----+--------------+------+----------+
+5 rows in set (0.00 sec)
+===========================================================================
+JDBC
+=====================================================================
+JDBC==JAVA DATABASE CONNECTIVITY
+WE NEED IMPORT ONE PACKAGE
+import java.sql.*;====== SET OF CLASSES AND SET OF INTERFACES
+INTERFACES
+========================================================
+1.Connection==========================ESTABLISH THE CONNECTION
+2.Statement===========================EXECUTE SQL QUERY
+3.PreparedStatement===================EXECUTE PRECOMPILED SQL STATEMENT
+4.CallableStatement===================EXECUTE STORED PROCEDURE
+5.ResultSet===========================RETRIEVE DATA FROM DATABASE AND STORE INTO RESULTSET
+6.DatabaseMetaData====================GIVE DETAILS INFORMATION OF DATABASE
+7.ResultSetMetaData===================GIVE DETAILS INFORMATION OF RESULTSET
+============================================================================
+CLASSES
+============================================================================
+DriverManager=================REGISTER AND LOAD THE JDBC DRIVER
+Date==========================DEALS WITH DATE DATA TYPE
+TimeStamp====================DEALS WITH BOTH DATE AND TIME
+EXCEPTION HANDLE HERE
+===================================================
+1.ClassNotFoundException
+2.SQLException
+==========================================================
+TYPES OF JDBC DRIVER
+=============================================================
+FOUR TYPES
+===============================
+1.JDBC ODBC BRIDGE============CALLED TYPE-I DRIVER
+2.NATIVE API JAVA===============TYPE-II
+3.JDBC NETWORK -ALL JAVA========TYPE-III
+4.NATIVE PROTOCOL-ALL JAVA=====TYPE-IV
+========================================================
+CLIENT     SERVER
+mysql> CREATE DATABASE FOODAPPS;
+Query OK, 1 row affected (0.01 sec)
 
+mysql> USE FOODAPPS;
+Database changed
+mysql> CREATE TABLE FOOD
+    -> (FOODID   VARCHAR(10) PRIMARY KEY,
+    ->  FOODNM   VARCHAR(25) NOT NULL,
+    ->  PRICE    DECIMAL(11,2));
+Query OK, 0 rows affected (0.04 sec)
+mysql> INSERT INTO FOOD VALUES('F1','PIZZA',300.00);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO FOOD VALUES('F2','MOMO',200.00);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM FOOD;
++--------+--------+--------+
+| FOODID | FOODNM | PRICE  |
++--------+--------+--------+
+| F1     | PIZZA  | 300.00 |
+| F2     | MOMO   | 200.00 |
++--------+--------+--------+
+2 rows in set (0.00 sec)
+
+STEPS OF COMMUNICATION
+=================================
+1.import java.sql.*;
+2.REGISTER AND LOAD THE JDBC DRIVER
+3.ESTABLISH THE CONNECTION=====DATABASENAME,USERNAME,PASSWORD,PORTNUMBER
+                               3306
+
+  cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodapps","root","arindam");
+4.CREATE THE STATEMENT
+5.EXECUTE THE  STATEMENT
+6.RETRIEVE DATA INTO RESULTSET
+7.CLOSE CONNECTION AND STATEMENT
+==============================================================================================
+
+INSERT================
+UPDATE   CRUD OPERATION
+DELETE
+FETCH================
+
+SELECT * FROM REGISTRATION WHERE UNAME=? AND PASS=?
+ 
 
 
 
