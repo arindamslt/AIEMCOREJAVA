@@ -699,7 +699,136 @@ DELETE
 FETCH================
 
 SELECT * FROM REGISTRATION WHERE UNAME=? AND PASS=?
- 
+DATE:22.04.2024
+=================================================================================================
+ COLLECTION FRAMEWORK
+================================================================================================
+ int x=15;
+ int y=25;
+int[] z=new int[50];
+LIMITATION OF ARRAY
+======================================================
+1.ARRAY IS IN FIXED SIZE
+2.IT STORE HOMEGENEOUS ELEMENTS
+COLLECTION
+==========================================================
+COLLECTION IS AN OBJECT WHICH HOLDS GROUP OF OBJECTS.THESE INDIVIDUAL OBJECTS ARE CALLED ELEMENTS.
+IT BELONGS TO java.util.* PACKAGE
+import java.util.*;
+
+ARRAYLIST
+========================================
+1.IT IS A DYNAMIC ARRAY
+2.UNDERLINE DATASTRUTURE IS GROWABLE OR RESIZABLE ARRAY
+3.IT ALLOWS BOTH HOMOGENEOUS AND HETEROGENEOUS ELEMENT
+4.IT IS BEST FETCHING DATA BECAUSE RANDOM ACCESS POSSIBLE
+
+TRAVERSE THE ELEMENTS
+==================================================
+1.ITERATOR===ONLY FORWARD DIRECTION
+2.LISTITERATOR==FORWARD AND BACKWARD DIRECTION
+3.ENUMERATOR
+
+SET
+=========================================
+IT DOES NOT ALLOW DUPLICATE VALUE
+CLASSES
+=========================================
+1.HASHSET
+==================================================
+UNDERLYING DATA STRUCTURE IS HASHTABLE
+IT IS USED FOR SEARCHING
+2.LINKEDHASHSET
+=================================
+UNDERLYING DATA STRUCTURE IS HASHTABLE+LINKEDLIST
+DATA WILL BE FETCHED IN INSERTED ORDER
+3.TREESET
+==============================================================
+UNDERLYING DATASTRUCTURE IS BALANCED TREE
+IT ALLOWS ONLY HOMOGENEOUS ELEMENTS
+DATA WILL BE FETCHED IN ASCENDING ORDER
+=========================================================================
+
+TREESET
+=========================================================================
+TreeSet ts=new TreeSet();
+ts.add(new Integer(10));
+ts.add(new Integer(20));
+ts.add(new Integer(30));
+ts.add(new Integer(40));
+ts.add(new Integer(0));
+ts.add(new Integer(50));
+ts.add(new Integer(40));
+==================================================
+Comparabale Interface
+==============================================
+public int compareTo(Object obj1,Object obj2)
+==================================================
+RETURN POSTIVIE=====OBJ1 GOES AFTER OBJ2
+RETURN NEGATIVE=====OBJ1 GOES BEFORE OBJ2
+RETURN 0=====BOTH ARE EQUAL
+===============================================
+CUSTOMIZED ORDER WE  NEED COMPARATOR INTERFACE
+============================================
+public int compare(Object o1,Object o2)
+
+MAP
+=========================================================
+MAP IS A COMBINATION OF KEY AND VALUE PAIR WHERE KEYS ARE NOT DUPLICATED VALUE MAY
+BE DUPLICATED
+EX:
+1   ANUP
+2   AYAN
+3   AYAN
+3   ROBIN======NOT POSSIBLE
+CLASSES
+============================
+HASHMAP
+LINKEDHASHMAP
+TREEMAP
+=============================================
+POJO CLASS
+===========================================
+PLAIN OLD JAVA OBJECT
+GETTER AND SETTER METHOD
+CONSTRUCTOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
